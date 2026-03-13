@@ -68,10 +68,6 @@ public abstract class Cuenta {
     private void registrarTransaccion(TipoTransaccion tipo, double monto){
         historial.add(new Transaccion(UUID.randomUUID().toString(), tipo, monto));
     }
-
-    public List<Transaccion> getHistorial(){
-        return historial;
-    }
     
     // Método abstracto
     public abstract double getLimitePermitido();

@@ -11,10 +11,18 @@ public abstract class Cuenta {
     }
 
     public void depositar(double monto) {
+        if(monto <= 0){
+            System.out.println("Monto inválido");
+            return;
+        }
         saldoDisponible += monto;
     }
 
     public boolean retirar(double monto) {
+        if(monto <= 0){
+            System.out.println("Monto inválido");
+            return false;
+        }
         if (monto > saldoDisponible + getLimitePermitido()) {
             return false;
         }
@@ -27,6 +35,9 @@ public abstract class Cuenta {
     }
 
     public boolean transferir(double monto, Cuenta destino) {
+        if(destino == null || monto <= 0){
+            return false;
+        }
         if (!retirar(monto)) {
             return false;
         }

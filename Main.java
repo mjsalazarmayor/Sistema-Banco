@@ -18,5 +18,11 @@ public class Main {
 
         ahorro.aplicarInteres();
         System.out.println("Saldo ahorro con interés: " + ahorro.getSaldoDisponible());
+
+        System.out.println("\nHistorial de transacciones:");
+
+        for (Transaccion t : ahorro.getHistorial()) {
+            System.out.println(t);
+        }
     }
 }

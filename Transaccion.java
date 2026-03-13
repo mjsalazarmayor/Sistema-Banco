@@ -7,13 +7,20 @@ public class Transaccion {
     private double monto;
     private LocalDateTime fecha;
 
-    public Transaccion(String id, TipoTransaccion tipo, double monto) {
+     public Transaccion(String id, TipoTransaccion tipo, double monto) {
         this.id = id;
         this.tipo = tipo;
         this.monto = monto;
         this.fecha = LocalDateTime.now();
+
+        if (!fechaValida()) {
+            throw new IllegalArgumentException("Fecha de transacción inválida");
+        }
     }
 
+    public boolean fechaValida() {
+        return fecha != null && !fecha.isAfter(LocalDateTime.now());
+    }
     public String getId() {
         return id;
     }
@@ -27,6 +34,7 @@ public class Transaccion {
     }
 
     public LocalDateTime getFecha() {
+        
         return fecha;
     }
 

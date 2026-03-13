@@ -25,6 +25,7 @@ public class Transaccion {
         return id;
     }
 
+
     public TipoTransaccion getTipo() {
         return tipo;
     }

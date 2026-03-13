@@ -33,8 +33,8 @@ public class Transaccion {
     @Override
     public String toString() {
         return "ID: " + id +
-               "  Tipo: " + tipo +
-               "  Monto: $" + monto +
-               "  Fecha: " + fecha;
+                "  Tipo: " + tipo +
+                "  Monto: $" + monto +
+                "  Fecha: " + fecha;
     }
 }
